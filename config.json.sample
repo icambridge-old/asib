@@ -1,0 +1,42 @@
+{
+	"nickname":"asib",
+	"ident":"asib",
+    "realName":"A Scala IRC Bot",
+    "channel":"#icambridge",
+    "server":"irc.freenode.net",
+    "port":6667,
+    "triggers":{
+        "PRIVMSG":["asib.command.PrivMsg"],
+        "JOIN":["asib.command.Join"],
+        "PART":["asib.command.Part"],
+		"QUIT":["asib.command.Quit"],
+		"_":["asib.command.Name"],
+		"KICK":["asib.command.Kick"]
+    },
+    "privmsgs":{
+    	"echo":"asib.command.user.Echo",
+        "time":"asib.command.user.Time",
+        "help":"asib.command.user.Help",
+        "join":"asib.command.user.Join",
+        "part":"asib.command.user.Part",
+        "info":"asib.command.user.Info"
+    },
+    "joins":{
+    	"greet":"asib.command.join.Greet",
+    	"userList":"asib.command.join.AddToList"
+    },
+    "parts":{
+    	"left":"asib.command.part.LeftTheBuilding",
+        "userList":"asib.command.part.RemoveFromList"
+    },
+    "quits":{
+    	"quitter":"asib.command.quit.Quitter",
+        "userList":"asib.command.quit.RemoveFromLists"
+    }
+    "kicks":{
+    	"quitter":"asib.command.kick.Rejoin",
+        "userList":"asib.command.kick.RemoveFromList"
+    }
+    "loggers":["asib.util.logger.ConsoleFormatted"],
+    "connector":"asib.util.connector.Irc"
+}
